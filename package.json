@@ -1,25 +1,14 @@
 {
     "name": "async-error-boundary",
-    "version": "0.0.5",
+    "version": "1.0.0",
     "private": false,
     "main": "dist/index.js",
-    "module": "dist/index.esm.js",
     "types": "dist/index.d.ts",
-    "files": [
-        "dist"
-    ],
     "description": "A React error boundary component that captures and handles both synchronous and asynchronous errors, including unhandled promise rejections",
     "author": "seong hyun lim <96limshyun@gmail.com>",
     "repository": {
         "type": "git",
         "url": "https://github.com/96limshyun/async-error-boundary"
-    },
-    "exports": {
-        ".": {
-            "import": "./dist/index.esm.js",
-            "require": "./dist/index.js",
-            "types": "./dist/index.d.ts"
-        }
     },
     "keywords": [
         "react",
@@ -31,20 +20,16 @@
         "promise-rejection"
     ],
     "peerDependencies": {
-        "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-        "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
     },
-    "devDependencies": {
-        "@rollup/plugin-commonjs": "^22.0.2",
-        "@rollup/plugin-node-resolve": "^13.3.0",
-        "@rollup/plugin-typescript": "^8.5.0",
+    "dependencies": {
         "@types/react": "^18.3.11",
         "@types/react-dom": "^18.3.1",
-        "rollup": "^2.79.2",
-        "typescript": "^4.9.5"
+        "typescript": "^5.5.3"
     },
     "scripts": {
-        "build": "rollup -c",
-        "prepare": "npm run build"
-    }
+        "prepare": "rm -rf dist && mkdir dist && tsc"
+    },
+    "license": "ISC"
 }
